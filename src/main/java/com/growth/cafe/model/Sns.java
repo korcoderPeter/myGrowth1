@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicInsert;
@@ -24,6 +25,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "sns")
 public class Sns {
 
 	@Id
@@ -41,8 +43,10 @@ public class Sns {
 
 	@CreationTimestamp
 	public Timestamp createTime;
-
-	@OneToMany(mappedBy = "Sns", fetch = FetchType.EAGER)
+	
+	
+	
+	@OneToMany(mappedBy = "snsid", fetch = FetchType.EAGER)
 	public List<Reply> replys;
 
 	/////////////////////////////////////////////////////////////////

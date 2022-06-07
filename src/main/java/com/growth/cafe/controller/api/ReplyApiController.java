@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.growth.cafe.dto.ResponseDto;
@@ -18,8 +19,9 @@ public class ReplyApiController {
 	private ReplyService rs;
 
 	@PostMapping("/api/replyWrite")
-	public ResponseDto<Integer> replyWrite(Reply r ){
+	public ResponseDto<Integer> replyWrite(@RequestBody Reply r ){
 		System.out.println("성공");
+		System.out.println(r.getContent());
 		rs.replyWrite(r);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}

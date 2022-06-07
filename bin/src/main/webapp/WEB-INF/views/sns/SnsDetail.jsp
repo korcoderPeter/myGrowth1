@@ -18,11 +18,10 @@ ${snsDetail.createTime}<br>
 
 <button id="btn-sns-delete">삭제</button> <br>
 <button id="page-move-snsupdate">수정</button> <br>
-댓글 :
-<c:forEach var="reply" items="${snsDetail.replys}">
-${reply.content } / ${reply.userid }
+
+<c:forEach var="replys" items="${snsDetail.replys}">
+${replys.content } / ${replys.userid }
 </c:forEach>
-<br>
 
 <input id="content">
 <input id="snsId" value="${snsDetail.id}">

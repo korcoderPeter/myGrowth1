@@ -10,8 +10,6 @@ let reply = {
 			snsId: $("#snsId").val(),
 			
 		}
-		
-		alert(data.content);
 			$.ajax({
 			type: "POST",
 			url: "/api/replyWrite",

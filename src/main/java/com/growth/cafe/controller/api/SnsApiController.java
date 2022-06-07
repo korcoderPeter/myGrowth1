@@ -24,7 +24,7 @@ public class SnsApiController {
 		ss.SnsWrite(s);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
-	@DeleteMapping("/api/snsDelete/{id}") // api/snsDelete
+	@DeleteMapping("/api/snsDelete/{id}") 
 	public ResponseDto<Integer> snsDelete(@PathVariable int id){
 		ss.SnsDelete(id);
 		

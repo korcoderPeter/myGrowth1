@@ -16,9 +16,12 @@ public class ReplyService {
 	@Autowired
 	private ReplyRepository rr;
 	
+	
+	//insert 
 	@Transactional
 	public void replyWrite(Reply r) {
 		r.setUserid("임시 아이디");
+		System.out.println(r.getContent());
 		
 		rr.save(r);
 	}
